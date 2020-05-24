@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Rich Text Editor</title>
+	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://kit.fontawesome.com/70a73a6de6.js" crossorigin="anonymous"></script>
 </head>
@@ -33,9 +34,9 @@
 	<option value="cursive">Cursive</option>
 </select>
 <br/>
-<iframe class="editorWindow" id="editorWindow" width="800px" height="450px"></iframe>
+<iframe class="editorWindow" id="editorWindow" style="border: 1px solid #000; height: 450px; width: 800px;"></iframe>
 <br/>
-<button onclick="console.log(document.getElementById('editorWindow').contentDocument);">Pegar conteudo e mostrar no console</button>
+<button onclick="printText();">Pegar conteudo e mostrar no console</button>
 
 <script type="text/javascript" src="script.js"></script>
 </body>

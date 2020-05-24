@@ -1,8 +1,7 @@
 // const editorWindow = getIFrameDocument("editorWindow");
-
+//Para pegar o conteudo do frame basta usar editorDoc.Body.innerHTML
 function load(){
-	//carrega o Iframe desejado com o designMode On
-	// editorWindow.designMode = "On";
+	//carrega o Iframe desejado para a habilitar a edição
 	var editor = document.getElementById('editorWindow');
 	editorDoc = editor.contentWindow.document;
 	editorDoc1 = editor.contentDocument;
@@ -39,4 +38,7 @@ function getIFrameDocument(aID){
 function doRichEditCommand(aName, aArg){
 	editorDoc1.execCommand(aName, false, aArg);
 	document.getElementById("editorWindow").contentDocument.focus;
+}
+function printText(){
+	console.log(editorDoc1.body.innerHTML);
 }
