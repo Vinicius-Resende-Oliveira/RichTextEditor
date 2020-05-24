@@ -1,22 +1,22 @@
-const editorWindow = getIFrameDocument("editorWindow");
+// const editorWindow = getIFrameDocument("editorWindow");
 
 function load(){
 	//carrega o Iframe desejado com o designMode On
 	// editorWindow.designMode = "On";
 	var editor = document.getElementById('editorWindow');
-
 	editorDoc = editor.contentWindow.document;
-	editorDoc1 = document.getElementById("editorWindow");
+	editorDoc1 = editor.contentDocument;
 	var editorBody = editorDoc.body;
 
-	if('spellcheck' in editorBody){//firefox
+	if('spellcheck' in editorBody){ //firefox
 		editorBody.spellcheck = false;
 	}
 
 	if('contentEditable' in editorBody){
 		//alow contentEditable
 		editorBody.contentEditable = true;
-		editorDoc1.dedsignMode = "on";
+		editorDoc1.designMode = "on";
+
 	} else {
 		//Caso o contentEditable não for compativel com o navegador
 		if('designMode' in editorDoc1){
@@ -37,6 +37,6 @@ function getIFrameDocument(aID){
 }
 
 function doRichEditCommand(aName, aArg){
-	editorWindow.execCommand(aName, false, aArg);
+	editorDoc1.execCommand(aName, false, aArg);
 	document.getElementById("editorWindow").contentDocument.focus;
 }
