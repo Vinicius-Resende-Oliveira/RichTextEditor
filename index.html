@@ -14,6 +14,8 @@
 <button onclick="doRichEditCommand('underline')"><i class="fas fa-underline"></i></button>
 <button onclick="doRichEditCommand('subscript')"><i class="fas fa-subscript"></i></button>
 <button onclick="doRichEditCommand('superscript')"><i class="fas fa-superscript"></i></button>
+<button onclick="doRichEditCommand('cut')"><i class="fas fa-cut"></i></button>
+<button onclick="doRichEditCommand('copy')"><i class="fas fa-copy"></i></button>
 <button onclick="doRichEditCommand('insertOrderedList')"><i class="fas fa-list-ol"></i></button>
 <button onclick="doRichEditCommand('insertUnorderedList')"><i class="fas fa-list-ul"></i></button>
 <button onclick="doRichEditCommand('justifyFull')"><i class="fas fa-align-justify"></i></button>
@@ -32,6 +34,27 @@
 	<option value="Arial">Arial</option>
 	<option value="Times New Roman">Times New Roman</option>
 	<option value="cursive">Cursive</option>
+</select>
+<select onchange="doRichEditCommand('formatblock',this[this.selectedIndex].value);this.selectedIndex=0;">
+	<option selected>- formatting -</option>
+	<option value="h1">Title 1 &lt;h1&gt;</option>
+	<option value="h2">Title 2 &lt;h2&gt;</option>
+	<option value="h3">Title 3 &lt;h3&gt;</option>
+	<option value="h4">Title 4 &lt;h4&gt;</option>
+	<option value="h5">Title 5 &lt;h5&gt;</option>
+	<option value="h6">Subtitle &lt;h6&gt;</option>
+	<option value="p">Paragraph &lt;p&gt;</option>
+	<option value="pre">Preformatted &lt;pre&gt;</option>
+</select>
+<select onchange="doRichEditCommand('fontsize',this[this.selectedIndex].value);this.selectedIndex=0;">
+	<option class="heading" selected>- size -</option>
+	<option value="1">Very small</option>
+	<option value="2">A bit small</option>
+	<option value="3">Normal</option>
+	<option value="4">Medium-large</option>
+	<option value="5">Big</option>
+	<option value="6">Very big</option>
+	<option value="7">Maximum</option>
 </select>
 <br/>
 <iframe class="editorWindow" id="editorWindow" style="border: 1px solid #000; height: 450px; width: 800px;"></iframe>
