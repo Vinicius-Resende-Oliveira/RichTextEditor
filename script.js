@@ -6,11 +6,17 @@ function load(){
 	var editor = document.getElementById('editorWindow');
 
 	editorDoc = editor.contentWindow.document;
-	editorDoc1 = getElementById("editorWindow");
+	editorDoc1 = document.getElementById("editorWindow");
 	var editorBody = editorDoc.body;
 
 	if('spellcheck' in editorBody){//firefox
 		editorBody.spellcheck = false;
+	}
+
+	if('contentEditable' in editorBody){
+		//alow contentEditable
+		editorBody.contentEditable = true;
+		editorDoc1.dedsignMode = "on";
 	}
 }
 
