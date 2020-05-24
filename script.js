@@ -22,6 +22,7 @@ function load(){
 			editorDoc1.designMode = "on";
 		}
 	}
+	doRichEditCommand("defaultParagraphSeparator", 'p');
 }
 
 
@@ -39,6 +40,7 @@ function doRichEditCommand(aName, aArg){
 	editorDoc1.execCommand(aName, false, aArg);
 	document.getElementById("editorWindow").contentDocument.focus;
 }
+
 function printText(){
 	console.log(editorDoc1.body.innerHTML);
 }
