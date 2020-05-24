@@ -1,8 +1,17 @@
 const editorWindow = getIFrameDocument("editorWindow");
 
 function load(){
-	//carrega o Iframe desejacom o designMode On
-	editorWindow.designMode = "On";
+	//carrega o Iframe desejado com o designMode On
+	// editorWindow.designMode = "On";
+	var editor = document.getElementById('editorWindow');
+
+	editorDoc = editor.contentWindow.document;
+	editorDoc1 = getElementById("editorWindow");
+	var editorBody = editorDoc.body;
+
+	if('spellcheck' in editorBody){//firefox
+		editorBody.spellcheck = false;
+	}
 }
 
 
