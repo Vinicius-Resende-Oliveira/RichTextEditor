@@ -38,5 +38,5 @@ function getIFrameDocument(aID){
 
 function doRichEditCommand(aName, aArg){
 	editorWindow.execCommand(aName, false, aArg);
-	document.getElementById("editorWindow").contentDocument.focus();
+	document.getElementById("editorWindow").contentDocument.focus;
 }
