@@ -17,6 +17,11 @@ function load(){
 		//alow contentEditable
 		editorBody.contentEditable = true;
 		editorDoc1.dedsignMode = "on";
+	} else {
+		//Caso o contentEditable não for compativel com o navegador
+		if('designMode' in editorDoc1){
+			editorDoc1.designMode = "on";
+		}
 	}
 }
 
