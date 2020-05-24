@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rich Text Editor</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://kit.fontawesome.com/70a73a6de6.js" crossorigin="anonymous"></script>
+</head>
+<body onload="load()">
+
+<button onclick="doRichEditCommand('bold')"><i class="fas fa-bold"></i></button>
+<button onclick="doRichEditCommand('italic')"><i class="fas fa-italic"></i></button>
+<button onclick="doRichEditCommand('strikeThrough')"><i class="fas fa-strikethrough"></i></button>
+<button onclick="doRichEditCommand('underline')"><i class="fas fa-underline"></i></button>
+<button onclick="doRichEditCommand('subscript')"><i class="fas fa-subscript"></i></button>
+<button onclick="doRichEditCommand('superscript')"><i class="fas fa-superscript"></i></button>
+<button onclick="doRichEditCommand('insertOrderedList')"><i class="fas fa-list-ol"></i></button>
+<button onclick="doRichEditCommand('insertUnorderedList')"><i class="fas fa-list-ul"></i></button>
+<button onclick="doRichEditCommand('justifyFull')"><i class="fas fa-align-justify"></i></button>
+<button onclick="doRichEditCommand('justifyCenter')"><i class="fas fa-align-center"></i></button>
+<button onclick="doRichEditCommand('justifyLeft')"><i class="fas fa-align-left"></i></button>
+<button onclick="doRichEditCommand('justifyRight')"><i class="fas fa-align-right"></i></button>
+<button onclick="doRichEditCommand('outdent')"><i class="fas fa-outdent"></i></button>
+<button onclick="doRichEditCommand('indent')"><i class="fas fa-indent"></i></button>
+
+<button onclick=" var aLink = window.prompt('Escreva o link desejado. (Com http/https ://)'); if(aLink != '' && aLink != 'http://' && aLink != 'https://'){doRichEditCommand('createLink', aLink)}"><i class="fas fa-link"></i></button>
+<button onclick="doRichEditCommand('unLink')"><i class="fas fa-unlink"></i></button>
+
+<button onclick="doRichEditCommand('undo')"><i class="fas fa-undo"></i></button>
+
+<select onchange="doRichEditCommand('fontName', this[this.selectedIndex].value)" >
+	<option value="Arial">Arial</option>
+	<option value="Times New Roman">Times New Roman</option>
+	<option value="cursive">Cursive</option>
+</select>
+<br/>
+<iframe class="editorWindow" id="editorWindow" width="800px" height="450px"></iframe>
+<br/>
+<button onclick="console.log(document.getElementById('editorWindow').contentDocument);">Pegar conteudo e mostrar no console</button>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
