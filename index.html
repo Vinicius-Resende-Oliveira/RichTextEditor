@@ -24,6 +24,7 @@
 <button onclick="doRichEditCommand('justifyRight')"><i class="fas fa-align-right"></i></button>
 <button onclick="doRichEditCommand('outdent')"><i class="fas fa-outdent"></i></button>
 <button onclick="doRichEditCommand('indent')"><i class="fas fa-indent"></i></button>
+<button onclick="doRichEditCommand('insertHorizontalRule')"><i class="fas fa-horizontal-rule"></i></button>
 
 <button onclick=" var aLink = window.prompt('Escreva o link desejado. (Com http/https ://)'); if(aLink != '' && aLink != 'http://' && aLink != 'https://'){doRichEditCommand('createLink', aLink)}"><i class="fas fa-link"></i></button>
 <button onclick="doRichEditCommand('unLink')"><i class="fas fa-unlink"></i></button>
@@ -55,6 +56,13 @@
 	<option value="5">Big</option>
 	<option value="6">Very big</option>
 	<option value="7">Maximum</option>
+</select>
+<select onchange="doRichEditCommand('foreColor',this[this.selectedIndex].value);">
+	<option value="#000000">Black</option>
+	<option value="#CDCDCD">Grey</option>
+	<option value="FFC0CB">Pink</option>
+	<option value="FFA500">Orange</option>
+	<option value="#00FF00">Green</option>
 </select>
 <br/>
 <iframe class="editorWindow" id="editorWindow" style="border: 1px solid #000; height: 450px; width: 800px;"></iframe>
