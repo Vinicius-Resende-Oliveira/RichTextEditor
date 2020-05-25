@@ -23,6 +23,8 @@ function load(){
 		}
 	}
 	doRichEditCommand("defaultParagraphSeparator", 'p');
+	doRichEditCommand("insertBrOnReturn");
+	
 }
 
 
@@ -39,6 +41,7 @@ function getIFrameDocument(aID){
 function doRichEditCommand(aName, aArg){
 	editorDoc1.execCommand(aName, false, aArg);
 	document.getElementById("editorWindow").contentDocument.focus;
+	console.log("")
 }
 
 function printText(){
